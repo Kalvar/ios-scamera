@@ -1,4 +1,4 @@
-## Scamera How To Get Started
+## How To Get Started
 
 SCamera is simple custom to control a based-camera to take a picture on your view. It will show a thumbnail image and show a tip to guide user to do next step on the left-top when it took a picture. It's s simple usage like this:
 
