@@ -24,6 +24,7 @@
 
 -(void)_coverViewOnCamera;
 -(void)_removeOldViews;
+-(void)_appearStatusBar:(BOOL)_isAppear;
 
 @end
 
@@ -31,7 +32,7 @@
 
 -(void)_coverViewOnCamera{
     UIButton *takePictureButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.window.frame.size.width / 2,
-                                                                             self.view.window.frame.size.height - 44.0f,
+                                                                             self.view.window.frame.size.height - 44.0f * 2,
                                                                              80.0f,
                                                                              44.0f)];
     [takePictureButton addTarget:self.imagePicker
@@ -55,6 +56,10 @@
     }
     [_oldImageView release];
     [_oldLabel release];
+}
+
+-(void)_appearStatusBar:(BOOL)_isAppear{
+    [[UIApplication sharedApplication] setStatusBarHidden:!_isAppear];
 }
 
 @end
@@ -85,7 +90,7 @@
     _steps = [[NSArray alloc] initWithObjects:@"0. Just Try", @"1. Take Up", @"2. Take Middle", @"3. Take Down", nil];
     _thumbnailImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 80.0f, 80.0f)];
     [_thumbnailImageView setTag:IMAGEVIEW_TAG];
-    _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(100.0f, 0.0f, 80.0f, 40.0f)];
+    _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(100.0f, 0.0f, 150.0f, 40.0f)];
     [_tipLabel setTag:LABEL_TAG];
     
     //建立選取器( Make a UIImagePicker )
@@ -111,9 +116,10 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    //Hide
+    [self _appearStatusBar:YES];
     //蓋個 View
     [self _coverViewOnCamera];
-    
     [super viewDidAppear:animated];
 }
 
@@ -148,6 +154,7 @@
         }
         //[picker dismissViewControllerAnimated:YES completion:nil];
         [self.imagePicker.view removeFromSuperview];
+        [self _appearStatusBar:NO];
         return;
     }
     //To get the Image.

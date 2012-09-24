@@ -261,15 +261,13 @@
 		8EC6AB9B160C7C9F00576D6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: KUO-MING LIN (LJ8A4ND325)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: KUO-MING LIN (LJ8A4ND325)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CameraSample/CameraSample-Prefix.pch";
 				INFOPLIST_FILE = "CameraSample/CameraSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CBA4899A-BDE3-4498-AEB1-349D6EA84338";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CBA4899A-BDE3-4498-AEB1-349D6EA84338";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -277,15 +275,13 @@
 		8EC6AB9C160C7C9F00576D6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: KUO-MING LIN (LJ8A4ND325)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: KUO-MING LIN (LJ8A4ND325)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CameraSample/CameraSample-Prefix.pch";
 				INFOPLIST_FILE = "CameraSample/CameraSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "CBA4899A-BDE3-4498-AEB1-349D6EA84338";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CBA4899A-BDE3-4498-AEB1-349D6EA84338";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

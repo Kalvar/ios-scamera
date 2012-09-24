@@ -48,6 +48,14 @@
 -(void)scameraDidFinishAllRequests:(CameraViewController *)_cameraController{
     //remove view or diss the controller
     [_cameraController.view removeFromSuperview];
+    //Show Something.
+    UIAlertView *_alertView = [[UIAlertView alloc] initWithTitle:@""
+                                                         message:@"All Finished"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"YES"
+                                               otherButtonTitles:nil];
+    [_alertView show];
+    [_alertView release];
 }
 
 
