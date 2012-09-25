@@ -16,10 +16,17 @@
 {
     camera = [[CameraViewController alloc] init];
     camera.delegate = self;
-    [self.view addSubview:camera.view];
+    //In viewDidLoad must be using addSubview method to display the Camera View.
+    //[self.view addSubview:camera.view];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    //In here to correct using the presentViewController to display the Camera View.
+    [self presentViewController:camera animated:YES completion:nil];
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

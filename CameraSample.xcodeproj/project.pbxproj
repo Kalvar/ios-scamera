@@ -62,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				8EC6AB80160C7C9F00576D6B /* CameraSample */,
+				8EC6AB81160C7C9F00576D6B /* Supporting Files */,
 				8EC6AB79160C7C9F00576D6B /* Frameworks */,
 				8EC6AB77160C7C9F00576D6B /* Products */,
 			);
@@ -96,7 +97,6 @@
 				8E851EF3160C8FB5006C8CCA /* CameraViewController.h */,
 				8E851EF4160C8FB5006C8CCA /* CameraViewController.m */,
 				8E851EF5160C8FB5006C8CCA /* CameraViewController.xib */,
-				8EC6AB81160C7C9F00576D6B /* Supporting Files */,
 			);
 			path = CameraSample;
 			sourceTree = "<group>";
@@ -113,6 +113,7 @@
 				8EC6AB90160C7C9F00576D6B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = CameraSample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

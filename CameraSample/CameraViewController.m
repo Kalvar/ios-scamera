@@ -8,9 +8,6 @@
 
 #import "CameraViewController.h"
 
-#define IMAGEVIEW_TAG 99
-#define LABEL_TAG     100
-
 @interface CameraViewController()
 
 @property (nonatomic, assign) NSInteger _times;
@@ -32,7 +29,7 @@
 
 -(void)_coverViewOnCamera{
     UIButton *takePictureButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.window.frame.size.width / 2,
-                                                                             self.view.window.frame.size.height - 44.0f * 2,
+                                                                             self.view.window.frame.size.height - 44.0f - 20.0f,
                                                                              80.0f,
                                                                              44.0f)];
     [takePictureButton addTarget:self.imagePicker
@@ -45,17 +42,15 @@
 }
 
 -(void)_removeOldViews{
-    UIImageView *_oldImageView = (UIImageView *)[[UIView alloc] viewWithTag:IMAGEVIEW_TAG];
-    UILabel *_oldLabel = (UILabel *)[[UIView alloc] viewWithTag:LABEL_TAG];
-    if( _oldImageView ){
-        _oldImageView.image = nil;
-        [_oldImageView removeFromSuperview];
+    if( self._thumbnailImageView.image || self._thumbnailImageView.superview == self.view ){
+        NSLog(@"1");
+        self._thumbnailImageView.image = nil;
+        [self._thumbnailImageView removeFromSuperview];
     }
-    if( _oldLabel ){
-        [_oldLabel removeFromSuperview];
+    if( self._tipLabel.superview == self.view ){
+        NSLog(@"2");
+        [self._tipLabel removeFromSuperview];
     }
-    [_oldImageView release];
-    [_oldLabel release];
 }
 
 -(void)_appearStatusBar:(BOOL)_isAppear{
@@ -89,9 +84,7 @@
     //To setup the steps which you wanna tell users what they can do for next.
     _steps = [[NSArray alloc] initWithObjects:@"0. Just Try", @"1. Take Up", @"2. Take Middle", @"3. Take Down", nil];
     _thumbnailImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 80.0f, 80.0f)];
-    [_thumbnailImageView setTag:IMAGEVIEW_TAG];
     _tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(100.0f, 0.0f, 150.0f, 40.0f)];
-    [_tipLabel setTag:LABEL_TAG];
     
     //建立選取器( Make a UIImagePicker )
     imagePicker = [[UIImagePickerController alloc] init];
